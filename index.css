@@ -1,23 +1,23 @@
 body {
   font-family: courier;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 1.3em;
+  padding: 0 1em;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+h1 {
+
 }
 
 .line {
   display: block;
 }
 
-.i {
-  min-width: 20px;
-}
-
 .ins {
-  padding: 0 2px;
-  margin: 0 1px;
+  padding: 0 0.1em;
+  margin: 0 0.1em;
   background-color: #eee;
 }
 
