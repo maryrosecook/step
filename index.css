@@ -1,0 +1,35 @@
+body {
+  font-family: courier;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.line {
+  display: block;
+}
+
+.i {
+  min-width: 20px;
+}
+
+.ins {
+  padding: 0 2px;
+  margin: 0 1px;
+  background-color: #eee;
+}
+
+.ins:hover {
+  cursor: pointer;
+}
+
+.ins.current {
+  background-color: yellow;
+}
+
+.ins.wrong {
+  background-color: #f99;
+}
+
+#complete {
+  display: none;
+}
