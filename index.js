@@ -10,7 +10,7 @@ class Execution {
                          6, 7, 3, 4, 5, 8, 9, 10, 11,
                          6, 7, 3, 4, 5, 8, 9, 10, 11,
                          6, 7, 3, 4, 5];
-    this.ins = -1;
+    this.iLastExecutedInstruction = -1;
   }
 
   checkStep (event) {
@@ -18,15 +18,15 @@ class Execution {
       return;
     }
 
-    const ins = view.instruction(event);
+    const clickedInstruction = view.instruction(event);
 
-    if (ins !== this.nextInstruction()) {
-      view.markWrong(ins);
+    if (clickedInstruction !== this.nextInstruction()) {
+      view.markWrong(clickedInstruction);
       return;
     }
 
-    this.ins++;
-    view.markCurrent(ins);
+    this.iLastExecutedInstruction++;
+    view.markCurrent(clickedInstruction);
 
     if (this.isComplete()) {
       view.complete();
@@ -34,11 +34,12 @@ class Execution {
   }
 
   nextInstruction () {
-    return this.instructions[this.ins + 1];
+    return this.instructions[this.iLastExecutedInstruction + 1];
   }
 
   isComplete () {
-    return this.ins === this.instructions.length - 1;
+    return this.iLastExecutedInstruction ===
+      this.instructions.length - 1;
   }
 };
 
