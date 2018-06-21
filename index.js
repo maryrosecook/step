@@ -13,12 +13,10 @@ class Execution {
     this.iLastExecutedInstruction = -1;
   }
 
-  checkStep (event) {
+  checkStep (clickedInstruction) {
     if (this.isComplete()) {
       return;
     }
-
-    const clickedInstruction = view.instruction(event);
 
     if (clickedInstruction !== this.nextInstruction()) {
       view.markWrong(clickedInstruction);
@@ -60,7 +58,11 @@ let view = {
   },
 
   setupInstructionHandlers: function(execution) {
-    $(".ins").click(execution.checkStep.bind(execution));
+    const self = this;
+    $(".ins").click(e => {
+      const clickedInstruction = self.instruction(e);
+      execution.checkStep(clickedInstruction);
+    });
   },
 
   complete: function() {
