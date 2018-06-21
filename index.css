@@ -7,10 +7,6 @@ body {
   margin-right: auto;
 }
 
-h1 {
-
-}
-
 .line {
   display: block;
 }
@@ -35,4 +31,30 @@ h1 {
 
 #complete {
   display: none;
+}
+
+
+.ins {
+  position: relative;
+}
+
+.ins .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+  border-radius: 3px;
+
+  position: absolute;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  z-index: 1;
+}
+
+.ins:hover .tooltiptext {
+  visibility: visible;
 }
