@@ -2,6 +2,9 @@ body {
   font-family: courier;
   font-size: 20px;
   padding: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .line {
